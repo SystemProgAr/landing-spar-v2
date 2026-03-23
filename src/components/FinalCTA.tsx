@@ -76,7 +76,11 @@ const FinalCTA = () => {
 
               <Input name="business" placeholder="Nombre de tu negocio" value={formData.business} onChange={handleChange} required className="h-12" />
 
-              <Textarea name="message" placeholder="Contanos tu desafío..." value={formData.message} onChange={handleChange} rows={4} />
+              <Textarea name="message" placeholder="Te escribo porque SUCAR VIAJES me habló muy bien de tu trabajo. Tenemos una agencia de viajes y, la verdad, la web nos está volviendo locos.
+
+Estamos en plena temporada y la página se cuelga justo cuando la gente va a pagar o tarda mil años en cargar los hoteles. Al final, los clientes se cansan y se van a otra parte, y estamos perdiendo ventas todos los días por esto.
+
+Queríamos ver si nos puedes dar una mano para arreglar estos fallos y que la web vuele. No queremos parches, sino que funcione bien de una vez por todas...." value={formData.message} onChange={handleChange} rows={4} />
 
               <Button type="submit" size="xl" variant="hero" className="w-full flex items-center justify-center gap-2">
                 Agendá tu Consulta

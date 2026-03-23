@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Cream/warm backgrounds inspired by wine labels */
-    --background: 35 30% 97%;
+    --background: 35 30% 80%;
     --foreground: 220 20% 15%;
 
     /* Card surfaces */

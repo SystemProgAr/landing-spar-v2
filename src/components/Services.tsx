@@ -41,7 +41,7 @@ const services = [
       "Actualizaciones de seguridad y rendimiento",
       "Respuesta rápida cuando nos necesitas"
     ],
-    gradient: "bg-gradient-gold",
+    gradient: "bg-green-800",
     shadow: "shadow-glow"
   }
 ];
@@ -121,21 +121,32 @@ const Services = () => {
           })}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <p className="text-lg text-muted-foreground mb-6">
-            ¿No estás seguro de qué necesitas? No te preocupes.
-          </p>
-          <Button 
-            size="xl" 
-            variant="cta"
-            onClick={scrollToCTA}
-          >
-            Hablemos de tu caso específico
-            <ArrowRight className="ml-2" />
-          </Button>
-        </div>
+{/* Bottom CTA */}
+<div className="mt-12 sm:mt-16 md:mt-20 text-center px-4 sm:px-6 flex flex-col items-center">
+  
+  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-5 sm:mb-6 md:mb-8 leading-relaxed max-w-xl">
+    ¿No estás seguro de qué necesitas? No te preocupes.
+  </p>
+
+    <Button 
+      size="xl" 
+      variant="cta"
+      onClick={scrollToCTA}
+      className="text-sm sm:text-base md:text-lg px-6 md:px-8 py-3 sm:py-4 flex items-center justify-center gap-2 group"
+    >
+      <span className="block sm:inline">
+        Hablemos de tu caso
+      </span>
+      <span className="block sm:inline">
+        específico
+      </span>
+
+      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
+    </Button>
+
+  </div>
       </div>
+      
     </section>
   );
 };

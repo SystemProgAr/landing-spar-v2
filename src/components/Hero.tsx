@@ -64,9 +64,9 @@ const Hero = () => {
         <div className="text-center md:text-left mb-4">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <span className="text-white">Cambiá el estrés de la </span>
-            <span className="text-primary">'Falla Digital'</span>
+            <span className="bg-gray-300 p-0.2 rounded-lg shadow-lg text-primary">'Falla Digital'</span>
             <span className="text-white"> por la alegría de las </span>
-            <span className="bg-gradient-wine bg-clip-text text-transparent">
+            <span className="bg-gray-300 p-0.2 rounded-lg shadow-lg  text-primary">
               'Reservas 24/7'
             </span>
           </h1>
@@ -87,19 +87,19 @@ const Hero = () => {
         {/* 🧱 SERVICIOS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 w-full max-w-2xl mb-4">
           
-          <div className="bg-primary p-3 rounded-lg shadow-lg text-left">
+          <div className="bg-primary p-3 rounded-lg shadow-lg text-center">
             <h3 className="font-bold text-sm text-white">Landing Page</h3>
-            <p className="text-xs text-white/90">Convierte visitas</p>
+            <p className="text-xs font-bold text-white">Convierte visitas</p>
           </div>
 
-          <div className="bg-black p-3 rounded-lg shadow-lg text-left">
+          <div className="bg-gradient-elegant p-3 rounded-lg shadow-lg text-center">
             <h3 className="font-bold text-sm text-white">Marketing</h3>
-            <p className="text-xs text-white/80">Más reservas</p>
+            <p className="text-xs font-bold text-white">Más reservas</p>
           </div>
 
-          <div className="bg-yellow-400 p-3 rounded-lg shadow-lg text-left">
-            <h3 className="font-bold text-sm text-black">Soporte PRO</h3>
-            <p className="text-xs font-bold text-black">Sin estrés</p>
+          <div className="bg-green-800 p-3 rounded-lg shadow-lg text-center">
+            <h3 className="font-bold text-sm text-white">Soporte PRO</h3>
+            <p className="text-xs font-bold text-white">Sin estrés</p>
           </div>
 
         </div>
