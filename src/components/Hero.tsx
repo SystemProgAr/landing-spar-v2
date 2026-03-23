@@ -9,9 +9,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-[100dvh] w-full flex flex-col overflow-hidden">
       
-      {/* 🎥 VIDEO BACKGROUND OPTIMIZADO */}
+      {/* 🎥 VIDEO BACKGROUND */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -24,29 +24,27 @@ const Hero = () => {
           <source src={dronVideo} type="video/mp4" />
         </video>
 
-        {/* Overlay para legibilidad */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* 🔝 NAVBAR */}
-      <div className="relative z-10 w-full px-4 md:px-8 py-3 flex justify-between items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
         
         {/* LOGO */}
-        <div className="animate-fade-in flex items-center">
-          <img
-            src={sparLogo}
-            alt="SPAR Logo"
-            className="w-24 md:w-32 lg:w-40 h-auto object-contain drop-shadow-2xl"
-          />
-        </div>
+        <img
+          src={sparLogo}
+          alt="SPAR Logo"
+          className="w-24 md:w-32 lg:w-40 h-auto object-contain shrink-0 drop-shadow-2xl"
+        />
 
         {/* CTA */}
-        <div className="animate-fade-in text-right">
+        <div className="text-right">
           <button onClick={scrollToCTA}>
             <Button
               size="lg"
               variant="hero"
-              className="text-sm md:text-base px-4 md:px-6 py-2.5 shadow-wine"
+              className="text-sm md:text-base px-4 md:px-6 py-2.5"
             >
               Agendá tu Consulta
               <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
@@ -59,11 +57,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 🎯 CONTENIDO PRINCIPAL */}
-      <div className="relative z-10 flex-1 flex flex-col justify-center items-center px-4 md:px-8 pb-6">
+      {/* 🎯 CONTENIDO */}
+      <div className="relative z-10 flex-1 flex flex-col justify-center items-center w-full max-w-5xl mx-auto px-4 md:px-6 pb-2 md:pb-4">
         
         {/* TITULO */}
-        <div className="max-w-3xl text-center md:text-left animate-fade-in mb-4">
+        <div className="text-center md:text-left mb-4">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <span className="text-white">Cambiá el estrés de la </span>
             <span className="text-primary">'Falla Digital'</span>
@@ -73,34 +71,33 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-white mt-2 font-medium">
+          <p className="text-xs sm:text-sm md:text-base text-white mt-2">
             Simplificamos la tecnología para que solo te enfoques en hacer crecer tu negocio.
           </p>
         </div>
 
         {/* CAJA VALOR */}
         <div className="bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-xl border border-primary/30 shadow-lg max-w-2xl mb-4">
-          <p className="text-xs md:text-sm leading-relaxed text-gray-800">
-            Somos <span className="font-bold text-primary">SPAR</span>: tu equipo tecnológico.
-            Eliminamos problemas digitales para que tengas{" "}
-            <span className="font-semibold">'cero interrupciones'</span> y más reservas.
+          <p className="text-xs md:text-sm text-gray-800">
+            Somos <span className="font-bold text-primary">SPAR</span>. Eliminamos problemas digitales 
+            para que tengas <span className="font-semibold">'cero interrupciones'</span> y más reservas.
           </p>
         </div>
 
-        {/* SERVICIOS */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mb-4 w-full">
+        {/* 🧱 SERVICIOS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 w-full max-w-2xl mb-4">
           
-          <div className="bg-primary p-3 rounded-lg shadow-lg hover:scale-105 transition text-left">
+          <div className="bg-primary p-3 rounded-lg shadow-lg text-left">
             <h3 className="font-bold text-sm text-white">Landing Page</h3>
             <p className="text-xs text-white/90">Convierte visitas</p>
           </div>
 
-          <div className="bg-black p-3 rounded-lg shadow-lg hover:scale-105 transition text-left">
+          <div className="bg-black p-3 rounded-lg shadow-lg text-left">
             <h3 className="font-bold text-sm text-white">Marketing</h3>
             <p className="text-xs text-white/80">Más reservas</p>
           </div>
 
-          <div className="bg-yellow-400 p-3 rounded-lg shadow-lg hover:scale-105 transition text-left">
+          <div className="bg-yellow-400 p-3 rounded-lg shadow-lg text-left">
             <h3 className="font-bold text-sm text-black">Soporte PRO</h3>
             <p className="text-xs font-bold text-black">Sin estrés</p>
           </div>
