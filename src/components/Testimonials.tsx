@@ -7,33 +7,33 @@ const testimonials = [
     name: "María Rodríguez",
     business: "Bodega Valle Escondido",
     role: "Propietaria",
-    text: "Desde que SPAR rediseñó nuestra web, las reservas para las degustaciones se triplicaron. Lo mejor es que ahora duermo tranquila sabiendo que si algo falla, están ahí al instante.",
+    text: "Había días en los que no teníamos reservas y dependíamos solo de Instagram. Era frustrante ver que la gente preguntaba pero no concretaba. Con SPAR cambiamos eso: hoy tenemos reservas constantes y la web trabaja por nosotros todos los días.",
     rating: 5,
-    result: "+300% en reservas online"
+    result: "Reservas constantes"
   },
   {
     name: "Carlos Mendoza",
     business: "Cabalgatas Los Pioneros",
     role: "Director",
-    text: "No más problemas técnicos un domingo a la tarde. El soporte de SPAR es realmente 24/7. Y el marketing digital nos trajo exactamente el tipo de turistas que buscábamos: familias y grupos listos para reservar.",
+    text: "La gente entraba a la web pero no reservaba. Perdíamos oportunidades todos los fines de semana. SPAR nos ayudó a transformar eso en clientes reales y ahora tenemos salidas completas con mucha más previsión.",
     rating: 5,
-    result: "Cero caídas en 8 meses"
+    result: "Salidas completas cada semana"
   },
   {
     name: "Lucía Fernández",
     business: "Artesanías Andinas",
     role: "Emprendedora",
-    text: "Invertí en publicidad antes y no vi resultados. Con SPAR, cada peso que gasto en marketing vuelve multiplicado. Mi tienda online ahora vende las 24 horas, incluso cuando duermo.",
+    text: "Invertía en publicidad pero no sabía si funcionaba. Sentía que tiraba dinero. Con SPAR empezamos a ver resultados reales: ahora cada campaña trae clientes que compran y la tienda vende incluso cuando estoy desconectada.",
     rating: 5,
-    result: "ROI de 450%"
+    result: "Ventas todos los días"
   },
   {
     name: "Roberto Silva",
     business: "Hotel Boutique Cordillera",
     role: "Gerente",
-    text: "La landing page que nos crearon es una máquina de convertir. Los visitantes ahora reservan directamente sin llamar. Y el soporte técnico nos salvó en plena temporada alta cuando tuvimos un problema.",
+    text: "Nuestra web era lenta y los clientes abandonaban antes de reservar. En temporada alta era desesperante. SPAR optimizó todo y hoy recibimos reservas directas sin depender tanto de plataformas externas.",
     rating: 5,
-    result: "+85% reservas directas"
+    result: "Más reservas directas"
   }
 ];
 
@@ -41,77 +41,98 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
+  // 🔥 AUTO PLAY LENTO (9 segundos)
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
   return (
-    <section className="py-20 lg:py-32 bg-muted/30">
+    <section className="py-10 lg:py-22 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-accent/20 px-4 py-2 rounded-full mb-6">
-            <Star className="w-5 h-5 text-accent fill-accent" />
-            <span className="text-sm font-bold text-foreground">Testimonios Reales</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Lo que dicen nuestros <br />
-            <span className="text-primary">emprendedores de éxito</span>
+
+        {/* HEADER */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Lo que está pasando en <br />
+            <span className="text-primary">
+              negocios turísticos como el tuyo
+            </span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            que confían en nosotros para hacer crecer sus negocios turísticos
+
+          <p className="text-muted-foreground">
+            Empresas que pasaron de no generar reservas…
+            <span className="font-bold text-foreground">
+              {" "}a tener clientes todos los días
+            </span>
           </p>
         </div>
 
-        {/* Carousel */}
-        <div className="max-w-5xl mx-auto relative">
+        {/* 🔥 CARRUSEL PRO */}
+        <div 
+          className="max-w-5xl mx-auto relative"
+          onMouseEnter={() => setIsAutoPlaying(false)}
+          onMouseLeave={() => setIsAutoPlaying(true)}
+          onTouchStart={() => setIsAutoPlaying(false)}
+        >
           <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-out"
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {testimonials.map((testimonial, index) => (
-                <div 
-                  key={index}
-                  className="w-full flex-shrink-0 px-4"
-                >
-                  <Card className="p-8 md:p-12 bg-card border-2 border-border hover:border-primary/50 transition-all duration-300 shadow-elegant">
+                <div key={index} className="w-full flex-shrink-0 px-4">
+
+                  <Card className="p-6 md:p-10 bg-card border-2 border-border shadow-lg">
+                    
                     <div className="flex items-start gap-4 mb-6">
-                      <Quote className="w-12 h-12 text-primary/30 flex-shrink-0" />
-                      <div className="flex-1">
+                      <Quote className="w-10 h-10 text-primary/30 flex-shrink-0" />
+
+                      <div>
                         <div className="flex gap-1 mb-3">
                           {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-5 h-5 text-accent fill-accent" />
+                            <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                           ))}
                         </div>
-                        <p className="text-lg md:text-xl leading-relaxed text-foreground mb-6">
+
+                        <p className="text-base md:text-lg leading-relaxed mb-6">
                           "{testimonial.text}"
                         </p>
                       </div>
                     </div>
-                    
-                    <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-border">
+
+                    <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t">
+                      
                       <div>
-                        <p className="font-bold text-foreground text-lg">{testimonial.name}</p>
-                        <p className="text-primary font-semibold">{testimonial.business}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        <p className="font-bold">{testimonial.name}</p>
+                        <p className="text-primary text-sm font-semibold">
+                          {testimonial.business}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {testimonial.role}
+                        </p>
                       </div>
-                      <div className="bg-gradient-wine text-primary-foreground px-6 py-3 rounded-full shadow-wine">
-                        <p className="font-bold text-sm">{testimonial.result}</p>
+
+                      <div className="bg-primary text-white px-4 py-2 rounded-full">
+                        <p className="text-xs font-bold text-center">
+                          {testimonial.result}
+                        </p>
                       </div>
+
                     </div>
                   </Card>
+
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Navigation Dots */}
+          {/* DOTS */}
           <div className="flex justify-center gap-3 mt-8">
             {testimonials.map((_, index) => (
               <button
@@ -120,39 +141,17 @@ const Testimonials = () => {
                   setCurrentIndex(index);
                   setIsAutoPlaying(false);
                 }}
-                className={`h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'w-12 bg-primary' 
-                    : 'w-3 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
+                className={`h-3 rounded-full transition-all ${
+                  index === currentIndex
+                    ? "w-10 bg-primary"
+                    : "w-3 bg-gray-300"
+              }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mt-20 max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-2">40+</p>
-              <p className="text-sm text-muted-foreground">Emprendimientos turísticos</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-2">99.9%</p>
-              <p className="text-sm text-muted-foreground">Uptime garantizado</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</p>
-              <p className="text-sm text-muted-foreground">Soporte técnico</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</p>
-              <p className="text-sm text-muted-foreground">Satisfacción Mendoza</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
     </section>
   );
 };

@@ -4,6 +4,7 @@ import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import Process from "@/components/Process";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Hero />
       <Problem />
       <Services />
+      <Process />
       <Testimonials />
       <FinalCTA />
       <Footer />

@@ -3,48 +3,47 @@ import sparLogo from "@/assets/spar-logo-footer.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-foreground py-16">
+    <footer className="bg-secondary text-secondary-foreground py-1"> {/* Reducido de py-16 a 10 */}
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-2"> {/* Reducido mb-12 a 8 */}
+          
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <img 
               src={sparLogo} 
-              alt="SPAR - Soluciones tecnológicas en Mendoza" 
-              className="w-32 h-32 md:w-40 md:h-40 mb-4 object-contain"
+              alt="SPAR" 
+              className="w-24 h-24 mb-3 object-contain" // Achicado de 40 a 24
             />
-            <p className="text-secondary-foreground/80 mb-6 max-w-md">
-              Soluciones tecnológicas diseñadas para emprendimientos turísticos. Convertimos tus desafíos digitales en oportunidades de crecimiento.
+            <p className="text-secondary-foreground font-medium mb-4 max-w-sm text-sm leading-snug">
+              Soluciones tecnológicas para turismo. Convertimos desafíos en crecimiento real.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a 
                 href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors"
+                className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-4 text-lg">Navegación</h4>
-            <ul className="space-y-3">
+            <h4 className="font-black mb-3 text-sm uppercase tracking-wider">Navegación</h4>
+            <ul className="space-y-2">
               <li>
-                <a href="#" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
+                <a href="#" className="text-secondary-foreground font-bold text-sm hover:underline transition-all">
                   Inicio
                 </a>
               </li>
               <li>
-                <a href="#servicios" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
+                <a href="#servicios" className="text-secondary-foreground font-bold text-sm hover:underline transition-all">
                   Servicios
                 </a>
               </li>
               <li>
-                <a href="#contact-form" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors">
+                <a href="#contact-form" className="text-secondary-foreground font-bold text-sm hover:underline transition-all">
                   Contacto
                 </a>
               </li>
@@ -53,39 +52,33 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-bold mb-4 text-lg">Contacto</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-secondary-foreground/80 text-sm">
-                  Mendoza, Argentina
-                </span>
+            <h4 className="font-black mb-3 text-sm uppercase tracking-wider">Contacto</h4>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-accent" />
+                <span className="text-secondary-foreground font-bold text-xs">Mendoza, Argentina</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-secondary-foreground/80 text-sm">
-                  +54 261 6973276
-                </span>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-accent" />
+                <span className="text-secondary-foreground font-bold text-xs">+54 261 6973276</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 flex-shrink-0 mt-1 text-accent" />
-                <span className="text-secondary-foreground/80 text-sm">
-                  systemprogar@gmail.com
-                </span>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-accent" />
+                <span className="text-secondary-foreground font-bold text-xs">systemprogar@gmail.com</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-secondary-foreground/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-secondary-foreground/60">
-              © {new Date().getFullYear()} SPAR. Todos los derechos reservados.
+        {/* Bottom Bar - Más compacta */}
+        <div>
+          <div>
+            <p >
+              © {new Date().getFullYear()} SPAR.
             </p>
-            <p className="text-sm text-secondary-foreground/60">
-              Hecho con <span className="text-accent">❤️</span> en Mendoza para conectar tu mundo, desde nuestra experiencia local hasta el destino global
-            </p>
+            <p >
+            Hecho con ❤️ en Mendoza • Experiencia local, destino global.
+          </p>
           </div>
         </div>
       </div>

@@ -3,65 +3,64 @@ import { AlertCircle, TrendingDown, Clock, BarChart3, Frown } from "lucide-react
 const problemPoints = [
   {
     icon: AlertCircle,
-    title: "Web Caída en Temporada Alta",
-    description: "Tu sitio web se cae justo cuando más reservas necesitas. Pierdes ventas y credibilidad.",
+    title: "Web Caída",
+    description: "Pierdes ventas y credibilidad en temporada alta.",
     color: "text-destructive"
   },
   {
     icon: TrendingDown,
-    title: "Inversión en Marketing que no genera Reservas",
-    description: "Gastas en publicidad pero los clicks no se convierten en clientes reales.",
+    title: "Marketing Estancado",
+    description: "Muchos clics, pero cero reservas reales.",
     color: "text-primary"
   },
   {
     icon: Clock,
-    title: "Soporte Lento o Inexistente",
-    description: "Cuando algo falla, nadie responde. Tu negocio está parado y nadie te ayuda.",
+    title: "Soporte Lento",
+    description: "Si algo falla, nadie responde. Negocio parado.",
     color: "text-secondary"
   },
   {
     icon: BarChart3,
-    title: "Diseños Web que solo dan 'Me Gusta', pero no 'Reservas'",
-    description: "Tu web es bonita pero no vende. Los visitantes miran y se van sin reservar.",
+    title: "Web que no Vende",
+    description: "Tu sitio es bonito, pero no convierte visitas.",
     color: "text-accent"
   }
 ];
 
 const Problem = () => {
   return (
-    <section className="py-20 lg:py-32 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-destructive/10 px-4 py-2 rounded-full mb-6">
-            <Frown className="w-5 h-5 text-destructive" />
-            <span className="text-sm font-semibold text-destructive">El Dolor de los Emprendedores</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            ¿Te suena familiar? <br />
-            <span className="text-primary">Problemas que no deberían detener tu negocio</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Cada día sin solución es dinero perdido, reputación dañada y oportunidades que se esfuman. 
-            <span className="font-bold text-foreground"> No tiene que ser así.</span>
-          </p>
+    <section className="py-9 bg-muted/20">
+      <div className="container mx-auto px-2 text-center">
+        
+        {/* Badge superior compacto */}
+        <div className="inline-flex items-center gap-2 bg-destructive/10 px-3 py-1 rounded-full mb-3 border border-destructive/20">
+          <Frown className="w-4 h-4 text-destructive" />
+          <span className="text-xs font-bold uppercase tracking-wider text-destructive">El costo de esperar</span>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+          ¿Te suena familiar?
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto mb-12 text-base">
+          Cada minuto sin solución es dinero perdido y reputación dañada.
+        </p>
+
+        {/* Grid Ajustado: 1 col móvil, 2 tablet, 4 escritorio para cards pequeñas */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {problemPoints.map((problem, index) => {
             const Icon = problem.icon;
             return (
               <div 
                 key={index}
-                className="group bg-card p-8 rounded-xl border-2 border-border hover:border-primary/50 shadow-sm hover:shadow-wine transition-all duration-300 animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group bg-card p-5 rounded-xl border border-border hover:border-primary/40 hover:shadow-md transition-all duration-300"
               >
-                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full ${problem.color} bg-current/10 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                  <Icon className={`w-7 h-7 ${problem.color}`} />
+                <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${problem.color} bg-current/10 mb-3 group-hover:scale-110 transition-transform`}>
+                  <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="text-base font-bold mb-2 group-hover:text-primary transition-colors">
                   {problem.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-snug">
                   {problem.description}
                 </p>
               </div>
@@ -69,13 +68,11 @@ const Problem = () => {
           })}
         </div>
 
-        {/* Emphasis */}
-        <div className="mt-16 max-w-3xl mx-auto text-center">
-          <div className="bg-gradient-wine p-8 rounded-2xl shadow-wine text-primary-foreground">
-            <p className="text-xl md:text-2xl font-bold leading-relaxed">
-              💸 Cada problema tecnológico te cuesta reservas, tiempo y dinero. 
-              <br />
-              <span className="text-accent">La pregunta no es si puedes resolverlo, sino cuánto más vas a perder esperando.</span>
+        {/* Banner de énfasis más sutil y elegante */}
+        <div className="mt-10 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-destructive/5 to-primary/5 p-6 rounded-xl border border-primary/10">
+            <p className="text-lg font-medium italic text-foreground/80">
+              "La pregunta no es si puedes resolverlo, sino cuánto más vas a perder esperando."
             </p>
           </div>
         </div>
