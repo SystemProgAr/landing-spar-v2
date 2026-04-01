@@ -92,21 +92,44 @@ const Hero = () => {
 
         {/* 🧱 SERVICIOS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 w-full max-w-2xl mb-4">
-          
-          <div className="bg-primary p-3 rounded-lg shadow-lg text-center">
-            <h3 className="font-bold text-sm text-white">Landing Page</h3>
-            <p className="text-xs font-bold text-white">Convierte el interés en acción</p>
-          </div>
+            <button
+                onClick={() => {
+                 document.getElementById("texto-landing")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center"
+                });
+                }}
+                className="bg-primary p-3 rounded-lg shadow-lg text-center cursor-pointer hover:scale-105 transition"
+              >
+                <h3 className="font-bold text-sm text-white">Landing Page</h3>
+                <p className="text-xs font-bold text-white">Convierte el interés en acción</p>
+              </button>
 
-          <div className="bg-gradient-elegant p-3 rounded-lg shadow-lg text-center">
-            <h3 className="font-bold text-sm text-white">Marketing</h3>
-            <p className="text-xs font-bold text-white">Asegura tu reserva.</p>
-          </div>
+           <button
+                onClick={() => {
+                  document.getElementById("texto-marketing")?.scrollIntoView({
+                   behavior: "smooth",
+                   block: "center"
+                });
+                }}
+                className="bg-gradient-elegant p-3 rounded-lg shadow-lg text-center cursor-pointer hover:scale-105 active:scale-95 transition w-full"
+              >
+                <h3 className="font-bold text-sm text-white">Marketing</h3>
+                <p className="text-xs font-bold text-white">Asegura tu reserva.</p>
+           </button>
 
-          <div className="bg-green-800 p-3 rounded-lg shadow-lg text-center">
-            <h3 className="font-bold text-sm text-white">Soporte PRO</h3>
-            <p className="text-xs font-bold text-white">Soporte invisible, impacto real</p>
-          </div>
+          <button
+            onClick={() => {
+                  document.getElementById("texto-soporte")?.scrollIntoView({
+                   behavior: "smooth",
+                   block: "center"
+                   });
+                }}
+                className="bg-green-800 p-3 rounded-lg shadow-lg text-center cursor-pointer hover:scale-105 active:scale-95 transition w-full"
+              >
+                <h3 className="font-bold text-sm text-white">Soporte PRO</h3>
+                <p className="text-xs font-bold text-white">Soporte invisible, impacto real</p>
+          </button>
 
         </div>
 

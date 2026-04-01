@@ -2,7 +2,8 @@ import { Laptop, Target, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
-  {
+ {
+    id: "landing",
     icon: Laptop,
     title: "Web & Landing",
     focus: "Diseño que vende",
@@ -10,8 +11,9 @@ const services = [
     features: ["Diseño Pro", "Alta conversión", "Carga ultra rápida", "Pagos integrados"],
     gradient: "bg-gradient-wine",
     shadow: "shadow-wine"
-  },
+},
   {
+    id: "marketing",
     icon: Target,
     title: "Marketing Turístico",
     focus: "Tráfico de calidad",
@@ -21,6 +23,7 @@ const services = [
     shadow: "shadow-elegant"
   },
   {
+    id: "soporte",
     icon: Shield,
     title: "Soporte Proactivo",
     focus: "Paz mental",
@@ -70,9 +73,12 @@ const Services = () => {
 
                 {/* Cuerpo de la Card */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-sm font-medium mb-4 text-foreground/80 leading-snug">
+                 <p 
+                    id={`texto-${service.id}`}
+                    className="text-sm font-medium mb-4 text-foreground/80 leading-snug"
+                  >
                     {service.benefit}
-                  </p>
+                 </p>
                   
                   <ul className="space-y-2 mb-6 flex-grow">
                     {service.features.map((feature, idx) => (
