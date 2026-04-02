@@ -78,7 +78,8 @@ const Problem = () => {
         </div>
       </div>
     </section>
-  );
-};
+     );
+  };
+  
 
 export default Problem;

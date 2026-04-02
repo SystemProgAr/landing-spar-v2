@@ -2,8 +2,7 @@ import { Laptop, Target, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
- {
-    id: "landing",
+  {
     icon: Laptop,
     title: "Web & Landing",
     focus: "Diseño que vende",
@@ -11,25 +10,23 @@ const services = [
     features: ["Diseño Pro", "Alta conversión", "Carga ultra rápida", "Pagos integrados"],
     gradient: "bg-gradient-wine",
     shadow: "shadow-wine"
-},
+  },
   {
-    id: "marketing",
     icon: Target,
     title: "Marketing Turístico",
     focus: "Tráfico de calidad",
-    benefit: "Inversión inteligente: atraemos turistas listos para reservar en Mendoza.",
+    benefit: "Inversión inteligente: atraemos turistas listos para reservar.",
     features: ["SEO Local", "Google & Meta Ads", "Estrategia 360°", "Reportes claros"],
     gradient: "bg-gradient-elegant",
     shadow: "shadow-elegant"
   },
   {
-    id: "soporte",
     icon: Shield,
     title: "Soporte Proactivo",
     focus: "Paz mental",
     benefit: "Monitoreo 24/7. Resolvemos problemas antes de que afecten tu negocio.",
     features: ["Cero caídas", "Backups diarios", "Seguridad blindada", "Respuesta VIP"],
-    gradient: "bg-green-800", // Puedes usar bg-gradient-to-br from-green-700 to-green-900
+    gradient: "bg-green-800",
     shadow: "shadow-glow"
   }
 ];
@@ -40,46 +37,54 @@ const Services = () => {
   };
 
   return (
-    <section className="py-2 md:py-4 bg-background">
+    <section id="servicios" className="py-8 md:py-12 bg-background">
       <div className="container mx-auto px-4">
         
-        {/* Header más compacto */}
+        {/* HEADER */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-block bg-primary/10 px-3 py-1 rounded-full mb-2">
-            <span className="text-xs font-bold text-primary uppercase tracking-widest">Soluciones</span>
+            <span className="text-xs font-bold text-primary uppercase tracking-widest">
+              Soluciones
+            </span>
           </div>
+
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Hechas para <span className="bg-gradient-wine bg-clip-text text-transparent">Vender Experiencias</span>
+            Hechas para{" "}
+            <span className="bg-gradient-wine bg-clip-text text-transparent">
+              vender más reservas
+            </span>
           </h2>
         </div>
 
-        {/* Grid de 3 columnas: Cards verticales y pequeñas */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon;
+
             return (
-              <div 
+              <div
                 key={index}
                 className={`group flex flex-col bg-card rounded-2xl overflow-hidden border border-border/50 ${service.shadow} hover:-translate-y-2 transition-all duration-300`}
               >
-                {/* Cabecera de la Card (Color) */}
-                <div className={`${service.gradient} p-6 text-primary-foreground flex flex-col items-center text-center`}>
+                {/* HEADER CARD */}
+                <div className={`${service.gradient} p-6 text-white flex flex-col items-center text-center`}>
                   <Icon className="w-10 h-10 mb-3 group-hover:scale-110 transition-transform" />
-                  <h3 className="text-xl font-bold leading-tight">{service.title}</h3>
+                  
+                  <h3 className="text-xl font-bold">
+                    {service.title}
+                  </h3>
+
                   <span className="text-[10px] mt-2 uppercase font-bold bg-white/20 px-2 py-1 rounded-md">
                     {service.focus}
                   </span>
                 </div>
 
-                {/* Cuerpo de la Card */}
+                {/* BODY */}
                 <div className="p-6 flex flex-col flex-grow">
-                 <p 
-                    id={`texto-${service.id}`}
-                    className="text-sm font-medium mb-4 text-foreground/80 leading-snug"
-                  >
+                  <p className="text-sm font-medium mb-4 text-foreground/80 leading-snug">
                     {service.benefit}
-                 </p>
-                  
+                  </p>
+
                   <ul className="space-y-2 mb-6 flex-grow">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -89,35 +94,35 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  <Button 
-                  variant="outline" 
-                  size="sm" // Cambiado de sm a md para que el botón sea más alto
-                  className="w-full group/btn hover:bg-primary hover:text-white transition-all text-sm md:text-base font-black uppercase tracking-tight border-2" 
-                  onClick={scrollToCTA}
-                >
-                  Saber más
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full hover:bg-primary hover:text-white transition-all font-bold"
+                    onClick={scrollToCTA}
+                  >
+                    Saber más
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Bottom CTA minimalista */}
-        <div className="mt-4 text-center">
+        {/* CTA FINAL */}
+        <div className="mt-12 text-center">
           <p className="text-lg md:text-xl font-extrabold text-foreground mb-6">
-              ¿No sabes por dónde empezar?
+            ¿No sabés por dónde empezar?
           </p>
-          <Button 
-            size="lg" 
+
+          <Button
+            size="lg"
             onClick={scrollToCTA}
-            className=" rounded-full px-12 shadow-lg hover:shadow-primary/30 transition-all"
+            className="rounded-full px-10 shadow-lg"
           >
-            ¿Hablamos?
+            Hablemos
           </Button>
         </div>
-    </div>
+      </div>
     </section>
   );
 };
