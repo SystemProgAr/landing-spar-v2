@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const WhatsAppButton = () => {
   const [visible, setVisible] = useState(false);
 
-  const phoneNumber = "5492616973276";
+  const phoneNumber = "5492616204767";
   const message = "Hola, tengo un negocio turístico y quiero más reservas";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
